@@ -49,9 +49,11 @@
         <p>Ad Somnia ("the app", "we", "us") helps you practice lucid dreaming by playing calming audio and delivering gentle Apple Watch cues during sleep. We've designed the app to use the minimum data needed to do that, and to keep your information on your device wherever possible.</p>
 
         <h2>Health &amp; sleep data</h2>
-        <p>To time cues during the night, Ad Somnia reads sleep-related data from your Apple Watch through Apple's <strong>HealthKit</strong> framework — only after you grant permission. This may include sleep stages and timing [adjust to the exact HealthKit categories you request].</p>
+        <p>To time cues during the night, Ad Somnia reads sleep-related data from your Apple Watch through Apple's <strong>HealthKit</strong> framework — only after you grant permission. Access is <strong>read-only</strong>; the app never writes to Health.</p>
+        <p>Specifically, we request one category: <strong>sleep analysis samples</strong> (<code>HKCategoryTypeIdentifierSleepAnalysis</code>), which include sleep stage (REM / Core / Deep / Awake) and timing. No other Health categories are requested.</p>
         <ul>
-          <li>This data is used <strong>only on your device</strong> to schedule and deliver cues.</li>
+          <li>This data is used <strong>only on your device</strong> to compute personalized REM probability windows and schedule cues.</li>
+          <li>With your permission, the app may receive HealthKit background updates so REM windows stay current. This processing also happens on-device.</li>
           <li>We <strong>do not</strong> sell it, share it, or use it for advertising or marketing.</li>
           <li>Health data is never used for any purpose other than providing the app's core features, consistent with Apple's HealthKit requirements.</li>
         </ul>
@@ -59,26 +61,27 @@
 
         <h2>Other information we process</h2>
         <ul>
-          <li><strong>Session settings &amp; preferences</strong> (such as cue strength and timing) — stored on your device [confirm; note if synced via iCloud].</li>
-          <li><strong>Purchase status</strong> — subscriptions are processed by Apple. We receive confirmation of your entitlement but not your payment details.</li>
-          <li><strong>Diagnostics</strong> — [state whether you collect any crash/usage analytics, name the provider, e.g. none / Apple-provided crash logs / a third-party SDK, and link their policy. If you collect none, say so plainly.]</li>
+          <li><strong>Session settings &amp; preferences</strong> (such as cue strength and onboarding state) and your computed sleep/REM model — stored locally on your device only, not synced to iCloud or any server.</li>
+          <li><strong>Diagnostics: none.</strong> We do not integrate any analytics or crash-reporting SDK. Apple may collect anonymous crash logs if you've opted into "Share With App Developers" in iOS Settings; we receive these only in aggregate via App Store Connect.</li>
+          <li><strong>Purchases:</strong> the app does not currently offer in-app purchases or subscriptions.</li>
         </ul>
 
         <h2>What we don't do</h2>
         <ul>
           <li>We don't sell your personal information.</li>
           <li>We don't use your Health data for advertising or share it with data brokers.</li>
-          <li>We don't require an account or ask for your name or email to use the app [adjust if you do].</li>
+          <li>We don't require an account, sign-in, or email to use the app, and we operate no server-side identity.</li>
         </ul>
 
         <h2>Third-party services</h2>
-        <p>Ad Somnia relies on Apple for the App Store, in-app purchases, HealthKit, and notifications; your use of those is governed by Apple's privacy policy. [List any other third-party services you use — analytics, error reporting, hosting — and link their policies here.]</p>
+        <p>Ad Somnia relies on Apple for the App Store, HealthKit, and notifications; your use of those is governed by Apple's privacy policy. We use no other third-party services — no analytics, error reporting, or hosting providers.</p>
+        <p>REM window timing and haptic settings are exchanged between your iPhone and paired Apple Watch via Apple's <strong>WatchConnectivity</strong> framework. This is a direct device-to-device transfer over Bluetooth/Wi-Fi; it does not go through our servers (we operate none).</p>
 
         <h2>Data retention</h2>
-        <p>Information stored on your device remains until you delete it or remove the app. [Describe retention for anything stored off-device, if applicable. If nothing is stored off-device, state that.]</p>
+        <p>We operate no servers and store no data off-device. Information on your device is removed when you delete the app or clear it from iOS Settings.</p>
 
         <h2>Children's privacy</h2>
-        <p>Ad Somnia is not directed to children under [13/16, per your target regions], and we do not knowingly collect personal information from them.</p>
+        <p>Ad Somnia is not directed to children under 13 (or the equivalent minimum age in your jurisdiction, for example 16 in parts of the EU), and we do not knowingly collect personal information from them.</p>
 
         <h2>Your rights</h2>
         <p>Depending on where you live, you may have rights to access, correct, or delete your personal information, or to object to certain processing. Because most data stays on your device, you can exercise much of this directly through iOS and the app. For anything else, contact us at the address below.</p>
