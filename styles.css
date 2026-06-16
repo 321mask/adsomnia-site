@@ -311,6 +311,16 @@ details.faq .ans strong { color: var(--text); font-weight: 600; }
 .prose ul { color: var(--muted); margin: 0 0 16px; padding-left: 22px; }
 .prose li { margin-bottom: 8px; }
 .prose strong { color: var(--text); font-weight: 600; }
+.prose code, .ans code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.86em;
+  color: var(--glow-bright);
+  background: rgba(167,139,250,0.12);
+  border: 1px solid var(--line);
+  padding: 1px 6px;
+  border-radius: 6px;
+  word-break: break-word;
+}
 .prose .updated { color: var(--muted-dim); font-size: 14px; }
 .notice {
   background: rgba(167,139,250,0.10); border: 1px solid var(--line-strong);
